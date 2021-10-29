@@ -50,11 +50,11 @@ if __name__ == "__main__":
     # Printing the original sentence
     print("The original sentence is:-")
     print(sentence)
-    # Initialising an empty string for forming the PigLatin sentence
+    # Initializing an empty string for forming the PigLatin sentence
     pig_str = ""
-    # Iterating over list
+    # Perform over list
     for word in list:
         pig_str += " " + pigLatin(word)
-    # Printing the PigLatin sentence
+    # Printing the piglatin sentence
     print("The piglatin sentence is:-")
     print(pig_str)
