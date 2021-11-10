@@ -1,3 +1,6 @@
+import sys
+
+
 def user_input():
     user_string = input("Enter any string")
     return user_string
@@ -47,6 +50,48 @@ if __name__ == "__main__":
     sentence = "I like to play basketball."
     # Splitting the sentence into a list consisting of its words
     list = sentence.split()
+
+
+    def string2() -> str:
+        str1 = str("");
+        if len(sys.argv) > 1:
+            str1 = sys.argv[1];
+        else:
+            str1 = input("enter user sentence for string2: ");
+        str1 = list(str1.split(" "));
+        for i in range(len(str1)):
+            word = str1[i];
+            if word[0] not in ['a', 'e', 'i', 'o', 'u']:
+                temp = word[1:] + word[0];
+                word = temp;
+                word += "ay"
+            else:
+                word += "yay"
+            str1[i] = word;
+        return " ".join(str1);
+
+
+    def breakIntoWords(string) -> list:
+        return list(string.split(" "));
+
+
+    def printwords(lst):
+        for i in lst:
+            print(i);
+
+
+    def string3():
+        str1 = str("");
+        if len(sys.argv) > 1:
+            str1 = sys.argv[1];
+        else:
+            str1 = input("enter user sentence for string3: ");
+
+        printwords(breakIntoWords(str1));
+
+
+    print(string2())
+    string3()
     # Printing the original sentence
     print("The original sentence is:-")
     print(sentence)
@@ -58,3 +103,29 @@ if __name__ == "__main__":
     # Printing the piglatin sentence
     print("The piglatin sentence is:-")
     print(pig_str)
+
+    import re
+
+    x = re.search("dog", "A dog and a cat can't be friends.")
+    print(x)
+
+    x = re.search("bird", "A dog and a cat can't be friends.")
+    print(x)
+
+    if re.search("cat", "A dog and a cat can't be friends."):
+        print("Some kind of dog has been found :-)")
+    else:
+        print("No dog has been found :-)")
+
+    if re.search("bird", "A dog and a cat can't be friends."):
+        print("Dogs and Cats and a bird.")
+    else:
+        print("No bird around.")
+
+import os
+import platform
+
+print(os.name)
+print(platform.system())
+print(platform.release())
+
